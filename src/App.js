@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
 
 function App() {
+  //State
+  const [defaultList, setDefaultList] = useState([
+    { id: Number = 1, name: String = "Premier", content: String = "Mon premier contenu !  " },
+    { id: Number = 2, name: String = "Second", content: String = "Mon second contenu !  " },
+    { id: Number = 3, name: String = "Troisio", content: String = "Mon troisième contenu !  " },
+  ]);
+
+
+
+  //Comportement
+
+
+
+
+  //Render
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h2>Welcome to my Week Manager !</h2>
+      <ol>
+        {defaultList.map(({ name, content }) => {
+          return (
+            <li>{name}
+
+              <ul>
+                <li>{content}
+                  <button type="button">X</button>
+                </li>
+              </ul>
+            </li>
+          )
+        })}
+      </ol>
+    </>
   );
 }
 
 export default App;
+
+/*
+== Je vais avoir besoin d'afficher une liste depuis un tableau de données.
+**Rafraichir cette liste quand elle est mise à jour.
+
+== Je vais devoir créer un formulaire.
+** Créer un bouton pour supprimer.
+
+== Je vais devoir récupérer les données entrée via le formulaire.
+** Afficher les données stockées dans la listes de tâches déjà existante.
+*/
