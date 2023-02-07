@@ -1,46 +1,14 @@
-import { useState } from "react";
+import TaskDisplay from './components/TaskDisplay.jsx';
+import Title from './components/Title.tsx';
 
 function App() {
-  //State
-  const [defaultList, setDefaultList] = useState([
-    { id: 1, name: "Premier", content: "Mon premier contenu !  " },
-    { id: 2, name: "Second", content: "Mon second contenu !  " },
-    { id: 3, name: "Troisio", content: "Mon troisième contenu !  " },
-  ]);
-
-  //Comportement
-
-  const handleClick = (id) => {
-    const copyData = [...defaultList];
-    const filterData = copyData.filter((data) => data.id !== id);
-    //console.log(e.target.id)
-    setDefaultList(filterData);
-  }
-
-
-  //Render
   return (
     <>
-      <h2>Welcome to my Week Manager !</h2>
-      <ol>
-        <ul>
-          {defaultList.map((item) => {
-            return (
-              <li key={item.id}>
-                <h4>{item.name}</h4>
-                {item.content}
-                <button id={item.id} type="button" onClick={() => handleClick(item.id)}>X</button>
-              </li>
-            )
-          })}
-        </ul>
-      </ol>
+      <Title />
+      <TaskDisplay />
     </>
-  );
+  )
 }
-
-
-
 export default App;
 
 /*
