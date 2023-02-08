@@ -37,7 +37,6 @@ const TaskDisplay = () => {
     const handlerClick = (id) => {
         const copyData = [...fakeData];
         const filterData = copyData.filter((data) => data.id !== id);
-        //console.log(e.target.id)
         setFakeData(filterData);
     }
     //Render
