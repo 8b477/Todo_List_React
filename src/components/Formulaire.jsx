@@ -8,7 +8,10 @@ const Formulaire = ({ onDataAdd }) => {
     const [inputEntryDate, setInputEntryDate] = useState("");
 
     //Comportement
-    //#region Track des différentes entrée dans les input avant refacto avec la fonction handlerOnChangeInput().
+    
+    // ! AVANT REFACTO !
+    
+    //#region Track des différentes entrée dans les input avec la fonction handlerOnChangeInput().
     // (1) Je récupère la valeur de mon input, je track le changement de celui-ci et le place dans mon tableau vide.
     // const handlerChangeTitle = (e) => {
     //     const dataInputTitle = e.target.value;
